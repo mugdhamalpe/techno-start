@@ -1,0 +1,126 @@
+body{
+    background: #1d1b31;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.title{
+    margin-top: 11rem!important;
+    color: white;
+    font-family: sans-serif;
+    font-size: 3em;
+    width: 1200px;
+    margin: 10px auto;
+    text-align: center;
+    text-shadow: 2px 2px 10px white;
+}
+.services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    
+}
+.card{
+    height: 350px;
+    width: 300px;
+    padding: 20px 35px;
+    border-radius: 10px;
+    background: #f8fafa;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47,1);
+}
+ .card .icon{
+    font-size: 64px;
+    display: block;
+    text-align: center;
+    color: #7ed6df;
+    margin-top: 18px;
+}
+.card h1{
+    font-family: sans-serif;
+    text-align: center;
+    color: #22a6b3;
+    font-size: 22px;
+}
+.card .button{
+    background: #22a6b3;
+    color: #c7ecee;
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    padding: 15px;
+    margin-top: 25px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+.card a{
+    text-decoration: none;
+}
+.card .content p{
+    font-size: 12px;
+    color: #535c68;
+     line-height: 18px;
+   font-family: sans-serif;
+}/**/
+.card:hover{
+    color: rgb(8, 8, 8);
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    animation: rotate 0.7s ease-in-out both;
+}
+.card::before,
+.card::after{
+    content: '';
+    background: #22a6b3;
+    width:180px;
+    height: 180px;
+    border-radius: 50%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: -80px;
+    z-index: -1;
+    transform: translate(100%,-25%) translate3d(0,0,0);
+    transition: all 0.15s cubic-bezier(0.02,0.01,0.47,1);
+}
+.card:hover:before,
+.card:hover:after{
+    opacity: 0.15;
+}
+.card:hover:before{
+    transform: translate3d(50%,0,0) scale(0.9);
+}
+.card:hover:after{
+    transform: translate(50%,0) scale(1.1);
+}
+
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(3deg);}
+    50%{transform: rotate(-3deg);}
+    75%{transform: rotate(1deg);}
+    100%{transform: rotate(0deg);}
+}
+@media (max-width: 900px)
+{
+    .title{
+        width: 100%;
+    }
+    .title h1{
+        font-size: 28px;
+    }
+    .services{
+        flex-direction: column;
+    }
+}
+@media(max-width: 600px)
+{
+    .card{
+        width: 200px;
+    }
+} 
